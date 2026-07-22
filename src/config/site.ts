@@ -88,7 +88,7 @@ export const siteConfig: SiteConfig = {
   ],
   socialLinks: {
     instagram: "https://instagram.com/car_upholstery_nairobi",
-    facebook: "https://facebook.com/moroautomotive",
+    facebook: "https://facebook.com/Moro-Automotive-254",
     tiktok: "https://tiktok.com/@moroautomotive",
   },
   nav: [
