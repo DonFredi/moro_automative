@@ -1,4 +1,3 @@
-import type { ComponentType } from "react";
 import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
 
@@ -15,12 +14,11 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-const socialLinks: { href: string; label: string; Icon: ComponentType<{ className?: string }> }[] = [
+const socialLinks = [
   { href: siteConfig.socialLinks.instagram, label: "Instagram", Icon: Instagram },
   { href: siteConfig.socialLinks.facebook, label: "Facebook", Icon: Facebook },
   { href: siteConfig.socialLinks.tiktok, label: "TikTok", Icon: TikTokIcon },
-].filter((s): s is { href: string; label: string; Icon: ComponentType<{ className?: string }> } => Boolean(s.href));
-
+].filter((s): s is typeof s & { href: string } => Boolean(s.href));
 export function Footer() {
   return (
     <footer className="bg-soft-black py-14 text-[#cfcfd1]">
