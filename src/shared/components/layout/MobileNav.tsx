@@ -21,7 +21,7 @@ export function MobileNav() {
         className="flex h-10 w-10 items-center justify-center border border-border lg:hidden"
         aria-label="Open menu"
       >
-        <Menu className="h-5 w-5" />
+        <Menu className="h-6 w-6" />
       </SheetTrigger>
       <SheetContent side="right" className="flex flex-col gap-4 justify-between pb-2">
         <SheetHeader>

@@ -5,6 +5,7 @@ import { AboutSection } from "./sections/AboutSection";
 import { ServicesPreviewSection } from "./sections/ServicesPreviewSection";
 import { WhyChooseUsSection } from "./sections/WhyChooseUsSection";
 import { CtaSection } from "./sections/CtaSection";
+import { PricingPreviewSection } from "../pricing/sections/PricingPreviewSection";
 
 export function HomePage() {
   return (
@@ -13,6 +14,7 @@ export function HomePage() {
       <SellingPointsSection />
       <AboutSection />
       <ServicesPreviewSection />
+      <PricingPreviewSection />
       <WhyChooseUsSection />
       <CtaSection />
     </PageWrapper>

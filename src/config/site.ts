@@ -99,6 +99,7 @@ export const siteConfig: SiteConfig = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Contact us", href: "/contact" },
   ],
   developerUrl: "Developed by ScriptTagg",
