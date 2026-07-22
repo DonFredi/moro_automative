@@ -19,9 +19,7 @@ const socialLinks: { href: string; label: string; Icon: ComponentType<{ classNam
   { href: siteConfig.socialLinks.instagram, label: "Instagram", Icon: Instagram },
   { href: siteConfig.socialLinks.facebook, label: "Facebook", Icon: Facebook },
   { href: siteConfig.socialLinks.tiktok, label: "TikTok", Icon: TikTokIcon },
-].filter((s): s is { href: string; label: string; Icon: ComponentType<{ className?: string }> } =>
-  Boolean(s.href)
-);
+].filter((s): s is { href: string; label: string; Icon: ComponentType<{ className?: string }> } => Boolean(s.href));
 
 export function Footer() {
   return (
@@ -72,7 +70,10 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={siteConfig.contact.phoneSecondary.link} className="text-sm text-[#9a9a9c] hover:text-accent">
+                <Link
+                  href={siteConfig.contact.phoneSecondary.link}
+                  className="text-sm text-[#9a9a9c] hover:text-accent"
+                >
                   {siteConfig.contact.phoneSecondary.label}
                 </Link>
               </li>
@@ -87,7 +88,10 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 pt-6 text-[13px] text-[#77777a] sm:flex-row sm:justify-between">
-          <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </span>
+          <span>{siteConfig.developerUrl}</span>
           <span>{siteConfig.tagline}</span>
         </div>
       </div>

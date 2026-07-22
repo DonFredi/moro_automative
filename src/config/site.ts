@@ -37,6 +37,7 @@ interface SiteConfig {
     tiktok?: string;
   };
   nav: { label: string; href: string }[];
+  developerUrl: string;
 }
 
 export const siteConfig: SiteConfig = {
@@ -100,4 +101,5 @@ export const siteConfig: SiteConfig = {
     { label: "Services", href: "/services" },
     { label: "Contact us", href: "/contact" },
   ],
+  developerUrl: "Developed by ScriptTagg",
 };
