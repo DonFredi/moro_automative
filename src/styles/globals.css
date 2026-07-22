@@ -103,4 +103,57 @@
       repeating-linear-gradient(45deg, rgba(200, 155, 106, 0.35) 0 1.5px, transparent 1.5px 9px),
       repeating-linear-gradient(-45deg, rgba(200, 155, 106, 0.35) 0 1.5px, transparent 1.5px 9px);
   }
+
+  /* Nav link — dashed "stitch" underline on hover, no underline at all when active */
+  .nav-link {
+    position: relative;
+    padding-bottom: 6px;
+    color: var(--color-soft-black);
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--color-primary) 60%, transparent 60%);
+    background-size: 8px 2px;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    width: 100%;
+  }
+  .nav-link-active {
+    position: relative;
+    padding-bottom: 6px;
+    color: var(--color-primary);
+  }
+
+  /* Full-section diagonal stitch-mesh texture, used sparingly on section backgrounds
+     (e.g. Why Choose Us) — very low opacity, reads as a woven/stitched texture. */
+  .mesh {
+    position: relative;
+    overflow: hidden;
+  }
+  .mesh::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(28, 28, 30, 0.07) 0 1.5px, transparent 1.5px 11px),
+      repeating-linear-gradient(-45deg, rgba(28, 28, 30, 0.07) 0 1.5px, transparent 1.5px 11px);
+  }
+  .mesh-accent::before {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(200, 155, 106, 0.14) 0 1.5px, transparent 1.5px 11px),
+      repeating-linear-gradient(-45deg, rgba(200, 155, 106, 0.14) 0 1.5px, transparent 1.5px 11px);
+  }
+  .mesh > * {
+    position: relative;
+    z-index: 1;
+  }
 }

@@ -16,6 +16,7 @@ interface SiteConfig {
   };
   contact: {
     phone: { label: string; link: string };
+    phoneSecondary: { label: string; link: string };
     email: { label: string; link: string };
     whatsapp: { label: string; number: string; link: string };
   };
@@ -36,7 +37,6 @@ interface SiteConfig {
     tiktok?: string;
   };
   nav: { label: string; href: string }[];
-  developerLink: string;
 }
 
 export const siteConfig: SiteConfig = {
@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
     "We deliver quality workmanship, durable materials, and affordable prices to make your car look and feel brand new. Car seat upholstery, roof lining, door panels, steering wheel wrapping, interior restoration and custom upgrades.",
   siteUrl: clientConfig.app.siteUrl,
   logoText: "M",
-  ogImage: "/images/logo-image.jpg",
+  ogImage: "/images/og-image.jpg",
   logo: {
     src: "/images/logo-image.jpg", // put your actual logo file in /public/images
     width: 60,
@@ -58,6 +58,10 @@ export const siteConfig: SiteConfig = {
     phone: {
       label: "+254 716 871 165",
       link: "tel:+254716871165",
+    },
+    phoneSecondary: {
+      label: "+254 788710704",
+      link: "tel:+254788710704",
     },
     email: {
       label: "upendocarseatcovers@gmail.com",
@@ -96,5 +100,4 @@ export const siteConfig: SiteConfig = {
     { label: "Services", href: "/services" },
     { label: "Contact us", href: "/contact" },
   ],
-  developerLink: "Developed by ScriptTagg",
 };

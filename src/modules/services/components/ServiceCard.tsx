@@ -10,7 +10,7 @@ export function ServiceCard({ service }: { service: Service }) {
       href={`/services/${service.slug}`}
       className="group relative block overflow-hidden border border-border bg-white transition-all hover:-translate-y-1 hover:border-accent"
     >
-      <div className="relative aspect-4/3">
+      <div className="relative aspect-[4/3]">
         <ImageWithSkeleton
           src={service.cardImage}
           alt={service.title}

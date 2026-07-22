@@ -1,4 +1,4 @@
-import type { ComponentType, ElementType } from "react";
+import type { ComponentType } from "react";
 import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
 
@@ -14,11 +14,14 @@ function TikTokIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-const socialLinks = [
+
+const socialLinks: { href: string; label: string; Icon: ComponentType<{ className?: string }> }[] = [
   { href: siteConfig.socialLinks.instagram, label: "Instagram", Icon: Instagram },
   { href: siteConfig.socialLinks.facebook, label: "Facebook", Icon: Facebook },
   { href: siteConfig.socialLinks.tiktok, label: "TikTok", Icon: TikTokIcon },
-].filter((s): s is typeof s & { href: string } => Boolean(s.href));
+].filter((s): s is { href: string; label: string; Icon: ComponentType<{ className?: string }> } =>
+  Boolean(s.href)
+);
 
 export function Footer() {
   return (
@@ -27,7 +30,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 border-b border-white/10 pb-10 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <Badge className="mb-3 border-accent text-accent" />
-            {/* <p className="mb-2 font-heading text-lg text-white">{siteConfig.name}</p> */}
+            <p className="mb-2 font-heading text-lg text-white">{siteConfig.name}</p>
             <p className="max-w-xs text-sm text-[#9a9a9c]">{siteConfig.description}</p>
             {socialLinks.length > 0 && (
               <div className="mt-5 flex gap-4">
@@ -69,6 +72,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href={siteConfig.contact.phoneSecondary.link} className="text-sm text-[#9a9a9c] hover:text-accent">
+                  {siteConfig.contact.phoneSecondary.label}
+                </Link>
+              </li>
+              <li>
                 <Link href={siteConfig.contact.email.link} className="text-sm text-[#9a9a9c] hover:text-accent">
                   {siteConfig.contact.email.label}
                 </Link>
@@ -79,10 +87,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 pt-6 text-[13px] text-[#77777a] sm:flex-row sm:justify-between">
-          <span>
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-          </span>
-          <span>{siteConfig.developerLink}</span>
+          <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
           <span>{siteConfig.tagline}</span>
         </div>
       </div>

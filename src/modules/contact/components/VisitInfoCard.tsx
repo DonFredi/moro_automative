@@ -29,6 +29,7 @@ export function VisitInfoCard() {
             Direct line
           </div>
           <div className="text-[14.5px]">{siteConfig.contact.phone.label}</div>
+          <div className="text-[14.5px]">{siteConfig.contact.phoneSecondary.label}</div>
         </div>
       </div>
 

@@ -19,7 +19,7 @@ export function ContactPage() {
         <SectionWrapper>
           <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[1.3fr_1fr]">
             <div className="border border-border bg-white p-7 sm:p-10">
-              <h2 className="mb-[18px] text-[22px] font-bold">Service inquiry</h2>
+              <h2 className="mb-4.5 text-[22px] font-bold">Service inquiry</h2>
               <hr className="stitch-divider mb-7" />
               <ContactForm />
             </div>

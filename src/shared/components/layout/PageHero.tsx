@@ -35,7 +35,7 @@ export function PageHero({
             "linear-gradient(100deg, rgba(22,33,62,0.85) 0%, rgba(22,33,62,0.60) 45%, rgba(22,33,62,0.25) 75%, rgba(22,33,62,0.08) 100%)",
         }}
       />
-      <div className="section-wrapper relative z-10 py-12">
+      <div className="section-wrapper relative z-10 py-12 text-left">
         <Breadcrumbs labels={breadcrumbLabels} light />
         <div className="eyebrow mb-2.5 text-accent">{eyebrow}</div>
         <h1 className="mb-3.5 font-heading text-[32px] leading-tight text-white md:text-[46px]">

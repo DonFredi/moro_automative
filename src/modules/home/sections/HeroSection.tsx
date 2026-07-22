@@ -27,7 +27,7 @@ export function HeroSection() {
       />
 
       <div className="section-wrapper relative z-10 py-12">
-        <div className="max-w-xl">
+        <div className="max-w-xl text-left">
           <div className="eyebrow mb-4 text-accent">{heroContent.eyebrow}</div>
           <h1 className="mb-5 font-heading text-[38px] leading-[1.08] text-white md:text-[54px]">
             {heroContent.heading[0]}

@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/shared/components/ui/button";
-import { LocationBar } from "@/shared/components/layout/LocationBar";
-import { Header } from "@/shared/components/layout/Header";
+import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { Footer } from "@/shared/components/layout/Footer";
 
 export default function NotFound() {
   return (
     <>
-      <LocationBar />
-      <Header />
+      <SiteHeader />
       <main className="section-wrapper flex min-h-[50vh] flex-col items-center justify-center py-24 text-center">
         <div className="eyebrow mb-3 justify-center">404</div>
         <h1 className="mb-4 font-heading text-3xl">This page took a wrong turn</h1>

@@ -5,7 +5,7 @@ import { whyChooseUs } from "../content/home-content";
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative overflow-hidden bg-secondary py-24">
+    <section className="relative overflow-hidden bg-secondary py-24 mesh mesh-accent">
       <SectionWrapper>
         <SectionHeading
           eyebrow="Why choose us"

@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { X } from "lucide-react";
 
 import { ImageWithSkeleton } from "@/shared/components/shared/ImageWithSkeleton";
-import { Dialog, DialogContent, DialogTitle } from "@/shared/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogClose } from "@/shared/components/ui/dialog";
 import {
   Carousel,
   CarouselContent,
@@ -39,30 +40,46 @@ export function ServiceGallery({ images, title }: { images: string[]; title: str
       </div>
 
       <Dialog open={openIndex !== null} onOpenChange={(open) => !open && setOpenIndex(null)}>
-        <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none">
+        <DialogContent
+          hideClose
+          className="max-h-none w-[calc(100%-1.5rem)] max-w-4xl overflow-visible border-none bg-transparent p-0 shadow-none"
+        >
           <DialogTitle className="sr-only">{title} gallery</DialogTitle>
+
           {openIndex !== null && (
-            <Carousel startIndex={openIndex} className="w-full">
-              <CarouselContent>
-                {images.map((src, index) => (
-                  <CarouselItem key={src}>
-                    <div className="relative aspect-[4/3] w-full">
-                      <Image
-                        src={src}
-                        alt={`${title} — photo ${index + 1}`}
-                        fill
-                        sizes="90vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="mt-4 flex justify-center gap-3">
-                <CarouselPrevious className="static translate-y-0" />
-                <CarouselNext className="static translate-y-0" />
+            <div className="relative">
+              {/* Close button sits above the image itself, on its own solid
+                  background, so it's always visible regardless of what's
+                  behind it in the photo. */}
+              <div className="mb-3 flex justify-end">
+                <DialogClose className="flex h-10 w-10 items-center justify-center border border-border bg-soft-black text-white transition-colors hover:bg-primary">
+                  <X className="h-5 w-5" />
+                  <span className="sr-only">Close</span>
+                </DialogClose>
               </div>
-            </Carousel>
+
+              <Carousel startIndex={openIndex} className="w-full">
+                <CarouselContent>
+                  {images.map((src, index) => (
+                    <CarouselItem key={src}>
+                      <div className="relative flex h-[70vh] w-full items-center justify-center bg-soft-black">
+                        <Image
+                          src={src}
+                          alt={`${title} — photo ${index + 1}`}
+                          fill
+                          sizes="90vw"
+                          className="object-contain"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="mt-4 flex justify-center gap-3">
+                  <CarouselPrevious className="static translate-y-0" />
+                  <CarouselNext className="static translate-y-0" />
+                </div>
+              </Carousel>
+            </div>
           )}
         </DialogContent>
       </Dialog>

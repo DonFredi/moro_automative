@@ -9,11 +9,16 @@ import { BookAppointmentButton } from "@/shared/components/shared/BookAppointmen
 import { siteConfig } from "@/config/site";
 import { cn } from "@/shared/lib/utils";
 
+/**
+ * The nav/logo/CTA row only. Positioning (fixed/sticky + hide-on-scroll) is
+ * handled by the parent <SiteHeader />, which also renders <LocationBar />
+ * above this so both move/hide together as one unit.
+ */
 export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-bg">
+    <header className="border-b border-border bg-bg">
       <div className="section-wrapper flex items-center justify-between py-5">
         <Badge />
 
@@ -26,17 +31,11 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "group relative pb-1.5 text-[13.5px] font-semibold uppercase tracking-wide",
-                      isActive ? "text-primary" : "text-soft-black"
+                      "text-[13.5px] font-semibold uppercase tracking-wide",
+                      isActive ? "nav-link-active" : "nav-link"
                     )}
                   >
                     {item.label}
-                    <span
-                      className={cn(
-                        "absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100",
-                        isActive && "scale-x-100"
-                      )}
-                    />
                   </Link>
                 </li>
               );
