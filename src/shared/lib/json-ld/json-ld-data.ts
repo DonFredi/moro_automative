@@ -10,7 +10,9 @@ const DAY_MAP: Record<string, string[]> = {
 /** "8:00 AM" -> "08:00" (schema.org expects 24h HH:MM) */
 function to24Hour(time: string): string {
   const [raw, meridiem] = time.trim().split(" ");
+  if (!raw) return "00:00";
   const [hourStr, minuteStr] = raw.split(":");
+  if (!hourStr || !minuteStr) return "00:00";
   let hour = parseInt(hourStr, 10);
   if (meridiem?.toUpperCase() === "PM" && hour !== 12) hour += 12;
   if (meridiem?.toUpperCase() === "AM" && hour === 12) hour = 0;
