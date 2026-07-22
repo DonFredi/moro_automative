@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors — Moro Automotive brand palette */
+  --color-primary: #a8121f;
+  --color-primary-dark: #841019;
+  --color-secondary: #16213e;
+  --color-accent: #c89b6a;
+  --color-border: #e5e7e8;
+  --color-text-secondary: #9ca3af;
+  --color-text-body: #4b5563;
+  --color-soft-black: #1c1c1e;
+  --color-bg: #f9f8f6;
+
+  /* Typography */
+  --font-heading: var(--font-archivo-black), sans-serif;
+  --font-body: var(--font-manrope), sans-serif;
+
+  /* Radius — deliberately sharp/architectural, matches the craft brand */
+  --radius-none: 0px;
+  --radius-DEFAULT: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 9999px; /* circles remain circular — a deliberate shape, not corner softening */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-soft-black);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--color-soft-black);
+  }
+}
+
+@layer components {
+  .section-wrapper {
+    max-width: 1160px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .eyebrow {
+    @apply flex items-center gap-2.5 text-[13px] font-bold uppercase tracking-[0.12em];
+    color: var(--color-primary);
+  }
+
+  /* Stitch-style dashed divider, used sparingly as the site's signature motif */
+  .stitch-divider {
+    border-top: 1.5px dashed var(--color-border);
+  }
+
+  /* Corner mesh accent — small stitched-texture accent tucked into a corner */
+  .corner-mesh {
+    position: absolute;
+    width: 92px;
+    height: 92px;
+    pointer-events: none;
+  }
+  .corner-mesh--br {
+    right: 0;
+    bottom: 0;
+    -webkit-mask-image: radial-gradient(circle at bottom right, black 0%, black 35%, transparent 72%);
+    mask-image: radial-gradient(circle at bottom right, black 0%, black 35%, transparent 72%);
+  }
+  .corner-mesh--tl {
+    left: 0;
+    top: 0;
+    -webkit-mask-image: radial-gradient(circle at top left, black 0%, black 35%, transparent 72%);
+    mask-image: radial-gradient(circle at top left, black 0%, black 35%, transparent 72%);
+  }
+  .corner-mesh--base {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(28, 28, 30, 0.16) 0 1.5px, transparent 1.5px 9px),
+      repeating-linear-gradient(-45deg, rgba(28, 28, 30, 0.16) 0 1.5px, transparent 1.5px 9px);
+  }
+  .corner-mesh--hover {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(168, 18, 31, 0.45) 0 1.5px, transparent 1.5px 9px),
+      repeating-linear-gradient(-45deg, rgba(168, 18, 31, 0.45) 0 1.5px, transparent 1.5px 9px);
+  }
+  .group:hover .corner-mesh--base { opacity: 0; }
+  .group:hover .corner-mesh--hover { opacity: 1; }
+  .corner-mesh--accent {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(200, 155, 106, 0.35) 0 1.5px, transparent 1.5px 9px),
+      repeating-linear-gradient(-45deg, rgba(200, 155, 106, 0.35) 0 1.5px, transparent 1.5px 9px);
+  }
+}
