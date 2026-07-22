@@ -26,7 +26,7 @@ export function WhyChooseUsSection() {
               <div className="mb-[18px] flex h-[70px] w-[70px] items-center justify-center rounded-full border-[2.5px] border-dashed border-accent text-accent">
                 <ContentIcon name={item.icon} className="h-6 w-6" />
               </div>
-              <h3 className="mb-2 text-base font-bold text-white">{item.title}</h3>
+              <h3 className="mb-2 text-base font-body font-extrabold text-white">{item.title}</h3>
               <p className="text-[13.5px] leading-relaxed text-[#aab2c4]">{item.description}</p>
             </div>
           ))}

@@ -19,7 +19,7 @@ export function ServiceCard({ service }: { service: Service }) {
         />
       </div>
       <div className="p-6">
-        <h3 className="mb-2 text-lg font-bold">{service.title}</h3>
+        <h3 className="mb-2 text-lg font-body font-extrabold sm:font-heading">{service.title}</h3>
         <p className="mb-4 text-[14.5px] text-text-body">{service.shortDescription}</p>
         <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-primary">
           Learn more

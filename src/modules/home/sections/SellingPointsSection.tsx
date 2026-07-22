@@ -17,7 +17,7 @@ export function SellingPointsSection() {
             <div className="mx-auto mb-4 flex h-[66px] w-[66px] items-center justify-center rounded-full border-[2.5px] border-dashed border-accent text-primary">
               <ContentIcon name={point.icon} className="h-6 w-6" />
             </div>
-            <h3 className="text-[15.5px] font-bold">{point.title}</h3>
+            <h3 className="text-[15.5px] font-body font-extrabold">{point.title}</h3>
           </div>
         ))}
       </div>

@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
       link: "tel:+254716871165",
     },
     phoneSecondary: {
-      label: "+254 788710704",
+      label: "+254 788 710 704",
       link: "tel:+254788710704",
     },
     email: {
@@ -69,7 +69,7 @@ export const siteConfig: SiteConfig = {
       link: "upendocarseatcovers@gmail.com",
     },
     whatsapp: {
-      label: "+254 716871165",
+      label: "+254 716 871 165",
       number: "254716871165",
       link: "https://wa.me/254716871165",
     },

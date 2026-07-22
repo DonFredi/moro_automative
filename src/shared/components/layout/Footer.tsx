@@ -14,7 +14,7 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-const socialLinks = [
+export const socialLinks = [
   { href: siteConfig.socialLinks.instagram, label: "Instagram", Icon: Instagram },
   { href: siteConfig.socialLinks.facebook, label: "Facebook", Icon: Facebook },
   { href: siteConfig.socialLinks.tiktok, label: "TikTok", Icon: TikTokIcon },

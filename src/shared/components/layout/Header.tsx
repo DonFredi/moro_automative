@@ -19,7 +19,7 @@ export function Header() {
 
   return (
     <header className="border-b border-border bg-bg">
-      <div className="section-wrapper flex items-center justify-between py-5">
+      <div className="section-wrapper flex items-center justify-between py-4">
         <Badge />
 
         <nav className="hidden lg:block">
@@ -32,7 +32,7 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "text-[13.5px] font-semibold uppercase tracking-wide",
-                      isActive ? "nav-link-active" : "nav-link"
+                      isActive ? "nav-link-active" : "nav-link",
                     )}
                   >
                     {item.label}

@@ -8,7 +8,7 @@ export const heroContent = {
 };
 
 export const sellingPoints = [
-  { title: "Quality workmanship you can trust", icon: "check" as const },
+  { title: "Quality workmanship", icon: "check" as const },
   { title: "Affordable prices", icon: "dollar" as const },
   { title: "Fast and reliable service", icon: "clock" as const },
   { title: "100% customer satisfaction", icon: "star" as const },

@@ -8,7 +8,7 @@ import { organizationSchema, websiteSchema } from "@/shared/lib/json-ld/json-ld-
 import { AppProviders } from "@/shared/providers/AppProviders";
 
 const archivoBlack = Archivo_Black({
-  weight: "400",
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-archivo-black",
   display: "swap",
